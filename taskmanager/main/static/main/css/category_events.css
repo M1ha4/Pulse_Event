@@ -1,0 +1,51 @@
+.category-page {
+    padding: 20px;
+}
+
+.category-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF1744;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.event-info {
+    padding: 10px 15px;
+}
+
+.event-info h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.event-info p {
+    font-size: 0.9rem;
+    color: #555;
+}

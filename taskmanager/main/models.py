@@ -13,7 +13,7 @@ class Event(models.Model):
     age_limit = models.PositiveIntegerField("Возрастное ограничение", default=0, blank=True, null=True)
     max_participants = models.PositiveIntegerField("Максимальное количество участников", blank=True, null=True)
     min_participants = models.PositiveIntegerField("Минимальное количество участников", blank=True, null=True)
-    current_participants = models.PositiveIntegerField("Текущее количество участников", blank=True, null=True)
+    current_participants = models.PositiveIntegerField("Текущее количество участников", blank=True, null=True, default=0)
     price = models.DecimalField("Цена", max_digits=10, decimal_places=2, default=0)
     prime_points = models.PositiveIntegerField("Баллы прайма", blank=True, null=True)
     main_image = models.ImageField("Главное фото", upload_to="main_event_photo/")
