@@ -1,0 +1,121 @@
+/* Сброс отступов */
+body, main, .calendar-page {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.calendar-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Prime секция */
+.prime-section {
+    display: flex;
+    width: 100%;
+    gap: 20px; /* Отступ между слайдером и календарем */
+}
+
+.prime-wrapper {
+    position: relative;
+    flex: 0 0 70%;
+    overflow: hidden;
+}
+
+.prime-slider {
+    display: flex;
+    gap: 10px; /* Отступ между слайдами */
+    transition: transform 0.4s ease-in-out;
+}
+
+.prime-slider .slide {
+    flex: 0 0 calc(50% - 5px); /* 5px — половина gap */
+    height: 250px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Чтобы у последнего слайда не было лишнего отступа */
+.prime-slider .slide:last-child {
+    margin-right: 0;
+}
+
+.prime-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+}
+.prime-arrow.left { left: 5px; }
+.prime-arrow.right { right: 5px; }
+
+.side-calendar {
+    flex: 0 0 30%;
+    background: #fafafa;
+    border-left: 1px solid #ddd;
+}
+
+.calendar-box {
+    padding: 20px;
+}
+
+/* Категории */
+.categories-section {
+    margin-top: 20px;
+}
+
+.categories-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.category-card {
+    min-width: 200px;
+    height: 120px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Все события */
+.all-events-section {
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.event-card {
+    background: #f5f5f5;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#show-more-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+

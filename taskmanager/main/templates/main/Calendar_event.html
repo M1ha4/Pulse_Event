@@ -1,0 +1,72 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Календарь событий{% endblock %}
+
+
+{% block css_stran %}
+    <link rel="stylesheet" href="{% static 'main/css/calendar_event.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'main/js/calendar_event.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="calendar-page">
+
+    <!-- Prime события + Календарь -->
+    <section class="prime-section">
+        <div class="prime-wrapper">
+            <button class="prime-arrow left">&#10094;</button>
+            <div class="prime-slider">
+                <div class="slide">Prime Event 1</div>
+                <div class="slide">Prime Event 2</div>
+                <div class="slide">Prime Event 3</div>
+                <div class="slide">Prime Event 4</div>
+            </div>
+            <button class="prime-arrow right">&#10095;</button>
+        </div>
+        <div class="side-calendar">
+            <div class="calendar-box">
+                <p>Календарь (позже настроим)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории событий -->
+    <section class="categories-section">
+        <h2>Категории событий</h2>
+        <div class="categories-slider">
+            <div class="category-card">Категория 1</div>
+            <div class="category-card">Категория 2</div>
+            <div class="category-card">Категория 3</div>
+            <div class="category-card">Категория 4</div>
+            <div class="category-card">Категория 5</div>
+        </div>
+    </section>
+
+    <!-- Все события -->
+    <section class="all-events-section">
+        <h2>Все события</h2>
+        <div class="events-grid">
+            <div class="event-card">Событие 1</div>
+            <div class="event-card">Событие 2</div>
+            <div class="event-card">Событие 3</div>
+            <div class="event-card">Событие 4</div>
+            <div class="event-card">Событие 5</div>
+            <div class="event-card">Событие 6</div>
+            <div class="event-card">Событие 7</div>
+            <div class="event-card">Событие 8</div>
+            <div class="event-card">Событие 9</div>
+            <div class="event-card">Событие 10</div>
+            <div class="event-card">Событие 11</div>
+            <div class="event-card">Событие 12</div>
+        </div>
+        <button id="show-more-btn">Показать ещё</button>
+    </section>
+
+</div>
+{% endblock %}
+

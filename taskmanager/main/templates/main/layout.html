@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css_stran %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <a href="#home" class="nazv_gkav">Pulse EventLab</a>
+        <p>Лаборатория событий на пульсе города</p>
+    </div>
+    <div class="header-right">
+        <span>Связаться с нами:</span>
+
+        <!-- Телефон -->
+        <a href="tel:+71234567890" target="_blank" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                         19.86 19.86 0 0 1-8.63-3.07
+                         19.5 19.5 0 0 1-6-6
+                         19.86 19.86 0 0 1-3.07-8.63
+                         A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+                         c.12.81.3 1.6.57 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27
+                         a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45
+                         c.74.27 1.53.45 2.34.57a2 2 0 0 1 1.72 2z"/>
+            </svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:info@pulselab.ru" target="_blank" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16v16H4z" />
+                <polyline points="22,6 12,13 2,6" />
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/71234567890" target="_blank" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16.003 3C9.374 3 4 8.373 4 15c0 2.64.867 5.08 2.32 7.062L4 29l7.15-2.273C13.016 27.56 14.473 28 16 28c6.627 0 12-5.373 12-12S22.63 3 16.003 3zm0 21c-1.345 0-2.652-.333-3.82-.964l-.273-.15-4.243 1.35 1.382-4.127-.178-.287A8.956 8.956 0 0 1 7 15c0-4.963 4.038-9 9.003-9C21.965 6 26 10.037 26 15s-4.035 9-9.997 9z"/>
+            </svg>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/yourtelegram" target="_blank" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.05 2.58a1.5 1.5 0 0 0-1.56-.27l-17 6.5a1.5 1.5 0 0 0 .06 2.8l4.18 1.56 1.72 5.46a1.5 1.5 0 0 0 2.38.74l2.77-2.22 4.13 3.06a1.5 1.5 0 0 0 2.37-.88l3-14a1.5 1.5 0 0 0-.05-.75 1.5 1.5 0 0 0-.9-.9z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+
+<nav class="sidebar">
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="{% url 'calendar' %}">Календарь событий</a></li>
+        <li><a href="#events">Организация мероприятий</a></li>
+        <li><a href="#catering">Кейтеринг &amp; Услуги</a></li>
+        <li><a href="#gallery">Галерея &amp; Отчеты</a></li>
+        <li><a href="#about">О нас</a></li>
+    </ul>
+        <div class="sidebar-socials">
+        <h3>Наши соцсети</h3>
+        <a href="#" class="social-icon instagram"></a>
+        <a href="#" class="social-icon vk"></a>
+        <a href="#" class="social-icon telegram"></a>
+    </div>
+    <div class="buttons">
+        <a href="#signup" class="btn primary">Записаться на мероприятие</a>
+        <a href="#order" class="btn secondary">Заказать мероприятие</a>
+    </div>
+</nav>
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+
+
+</body>
+</html>

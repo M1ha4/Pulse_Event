@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 200px;
+    right: 0;
+    height: 70px;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 2px solid #FF1744;
+    z-index: 1000; /* чтобы header всегда был выше контента */
+}
+
+.nazv_gkav{
+    margin: 0;
+    font-size: 30px;
+    color: #FF1744;
+    text-decoration: none;
+}
+
+.header-left p {
+    margin: 0;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.header-right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-right span {
+    font-size: 14px;
+    color: white;
+    margin-right: 5px;
+}
+
+.contact-text {
+    font-size: 14px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #181818;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #FF1744;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn.primary {
+    background: #FF1744;
+}
+
+.btn.secondary {
+    background: #333;
+}
+
+.sidebar-socials {
+    padding-left: 10px;
+}
+
+.sidebar-socials h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+    color: #FF1744;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    background: #FF1744;
+    color: white;
+    box-shadow: 0 0 15px #FF1744, 0 0 30px #FF1744;
+}
+
+main {
+    margin-left: 200px;
+    padding: 90px 20px 20px;
+}
+
+
+/* Эффект пульса */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 23, 68, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 23, 68, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 23, 68, 0.5); }
+}
+
+.btn.primary,
+.btn.secondary,
+.social-icon {
+    animation: pulse 2s infinite;
+}
+
+.social-icon:hover {
+    animation: pulse 1s infinite;
+    background: #FF1744;
+    box-shadow: 0 0 20px #FF1744, 0 0 40px #FF1744;
+    transform: scale(1.15);
+}

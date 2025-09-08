@@ -1,0 +1,111 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ event.name }}{% endblock %}
+
+{% block css_stran %}
+    <link rel="stylesheet" href="{% static 'main/css/event.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'main/js/event.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="event-container">
+
+    <!-- Сверху дата, место и кнопка -->
+    <div class="event-info">
+        <span class="event-date">{{ event.date_time|date:"d.m.Y H:i" }}</span>
+        <span class="event-place">{{ event.location }}</span>
+        <a href="#registration" class="btn primary">Записаться</a>
+    </div>
+
+    <!-- Название -->
+    <h1 class="event-title">{{ event.name }}</h1>
+
+    <!-- Фото -->
+    <div class="event-photo">
+        <img src="{{ event.main_image.url }}" alt="{{ event.title }}">
+        {% if event.age_limit %}
+        <span class="age-limit">{{ event.age_limit }}+</span>
+        {% endif %}
+    </div>
+
+    <!-- Краткое описание -->
+    <p class="event-short">{{ event.short_description }}</p>
+
+    <!-- Длинное описание (если есть) -->
+    {% if event.long_description or event.extra_images.all %}
+    <section class="event-about">
+        <h2>О событии</h2>
+        <p>{{ event.long_description|linebreaks }}</p>
+
+        <!-- Фотографии (если есть) -->
+        {% if event.media.exists %}
+        <section class="event-media">
+            <h2>Фотографии и видео</h2>
+            <div class="media-slider-wrapper">
+                <button class="media-arrow left">&#10094;</button>
+                <div class="media-slider">
+                    {% for media in event.media.all %}
+                        <div class="media-item">
+                            {% if media.is_image %}
+                                <img src="{{ media.media_file.url }}" alt="{{ media.description }}">
+                            {% else %}
+                                <video controls>
+                                    <source src="{{ media.media_file.url }}" type="video/mp4">
+                                    Ваш браузер не поддерживает воспроизведение видео.
+                                </video>
+                            {% endif %}
+                            {% if media.description %}
+                                <p>{{ media.description }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="media-arrow right">&#10095;</button>
+            </div>
+        </section>
+        {% endif %}
+
+    </section>
+    {% endif %}
+
+    <!-- Регистрация -->
+    <section id="registration" class="registration-form">
+        <h2>Записаться на мероприятие</h2>
+        <p class="event-price">Цена участия: <strong>{{ event.price }} ₽</strong></p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Записаться</button>
+        </form>
+
+        <!-- Количество участников -->
+        <p class="participants-count">
+            Участников: {{ event.participants_count }} из {{ event.max_participants }}
+        </p>
+
+        <p class="confirmation-note">
+            Подтверждение регистрации придет на вашу почту в течение часа.
+            Если этого не произошло, свяжитесь с нами по контактам, указанным на сайте.
+        </p>
+    </section>
+</div>
+{% endblock %}
