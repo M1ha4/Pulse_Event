@@ -74,3 +74,7 @@ def category_events(request, category_name):
         'events': events,
         'category_name': category_name
     })
+
+
+def catering(request):
+    return render(request, "main/catering.html")

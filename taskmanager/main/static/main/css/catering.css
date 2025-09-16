@@ -1,0 +1,329 @@
+.catering-page {
+    padding: 30px;
+    overflow-x: hidden; /* убираем горизонтальный скролл только здесь */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.catering-page h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FF1744;
+}
+
+.catering-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #555;
+}
+
+/* Обёртка слайдера */
+.services-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; /* гарантированно не вылезает за пределы */
+}
+
+/* Горизонтальный скролл */
+.services-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 40px; /* отступы, чтобы стрелки не перекрывали карточки */
+    box-sizing: border-box;
+    scrollbar-width: none; /* убираем нативный скролл */
+}
+.services-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Карточки */
+.service-card {
+    min-width: 280px;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Фото */
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Инфо */
+.service-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.service-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+.service-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Ссылка, оформленная как кнопка */
+.btn-order {
+    display: inline-flex;       /* чтобы можно было центрировать текст */
+    justify-content: center;    /* горизонтальное выравнивание */
+    align-items: center;        /* вертикальное выравнивание */
+    background: #FF1744;
+    color: white;
+    text-decoration: none;      /* убираем подчеркивание у ссылки */
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    transition: background 0.3s;
+}
+
+.btn-order:hover {
+    background: #e0163a;        /* чуть темнее при наведении */
+}
+
+
+
+/* Стрелки */
+.service-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+.service-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+.service-arrow.left {
+    left: 5px;
+}
+.service-arrow.right {
+    right: 5px;
+}
+.service-arrow.hidden {
+    display: none;
+}
+
+
+.services-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.service-detail {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.service-detail h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #FF1744;
+}
+
+.service-detail p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.service-benefits {
+    margin: 15px 0;
+    padding-left: 20px;
+    color: #bbb;
+}
+
+.service-benefits li {
+    margin: 5px 0;
+}
+
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.price-card {
+    background: #262626;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.price-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.price-card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF1744;
+}
+
+.price-card:hover {
+    background: #333;
+    transform: translateY(-5px);
+}
+
+.order-btn {
+    display: inline-block;
+    background: #FF1744;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.order-btn:hover {
+    background: #e0133b;
+    transform: scale(1.05);
+}
+
+
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Анимация появления окна */
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content h2 {
+    color: #FF1744;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #262626;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: #FF1744;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e0133b;
+    transform: scale(1.05);
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #FF1744;
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #FF1744;
+}
+
+
+

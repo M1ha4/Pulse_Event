@@ -1,0 +1,195 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Кейтеринг & Услуги{% endblock %}
+
+{% block css_stran %}
+<link rel="stylesheet" href="{% static 'main/css/catering.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'main/js/catering.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="catering-page">
+    <h1>Кейтеринг & Услуги</h1>
+    <p class="catering-subtitle">
+        Мы предлагаем профессиональные услуги для вашего мероприятия.
+        Выберите подходящую опцию и свяжитесь с нами для оформления заказа.
+    </p>
+
+    <div class="services-wrapper">
+        <button class="service-arrow left">&#10094;</button>
+        <div class="services-slider">
+            <!-- Услуга 1 -->
+            <div class="service-card">
+                <img src="{% static 'main/img/catering/hookah.jpg' %}" alt="Кальянный кейтеринг">
+                <div class="service-info">
+                    <h3>Кальянный кейтеринг</h3>
+                    <p>Профессиональные кальянщики и лучшие вкусы табака создадут уютную атмосферу.</p>
+                    <a href="#hookah" class="btn-order">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="service-card">
+                <img src="{% static 'main/img/catering/bar.jpg' %}" alt="Барный кейтеринг">
+                <div class="service-info">
+                    <h3>Барный кейтеринг</h3>
+                    <p>Бар с коктейлями, вином и безалкогольными напитками для любых форматов мероприятий.</p>
+                    <a href="#bar" class="btn-order">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="service-card">
+                <img src="{% static 'main/img/catering/buffet.jpg' %}" alt="Фуршет">
+                <div class="service-info">
+                    <h3>Фуршет</h3>
+                    <p>Элегантные закуски, блюда и десерты для гостей на банкетах и вечеринках.</p>
+                    <a href="#buffet" class="btn-order">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="service-card">
+                <img src="{% static 'main/img/catering/decor.jpg' %}" alt="Оформление и декор">
+                <div class="service-info">
+                    <h3>Оформление и декор</h3>
+                    <p>Создадим атмосферу праздника с помощью стильного оформления и декора.</p>
+                    <a href="#decor" class="btn-order">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- Услуга 5 -->
+            <div class="service-card">
+                <img src="{% static 'main/img/catering/music.jpg' %}" alt="Музыкальное сопровождение">
+                <div class="service-info">
+                    <h3>Музыкальное сопровождение</h3>
+                    <p>Живая музыка, DJ или ведущие, чтобы ваше событие запомнилось надолго.</p>
+                    <a href="#music" class="btn-order">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <button class="service-arrow right">&#10095;</button>
+    </div>
+    <section class="services-details">
+
+        <!-- 1. Кальянный кейтеринг -->
+        <div class="service-detail" id="hookah">
+            <h2>Кальянный кейтеринг</h2>
+            <p>Погрузитесь в атмосферу восточного отдыха — профессиональные кальянщики, премиальные табаки и стильная подача.</p>
+            <ul class="service-benefits">
+                <li>Опытные кальянщики</li>
+                <li>Большой выбор табаков и вкусов</li>
+                <li>Современные кальяны</li>
+            </ul>
+            <div class="pricing">
+                <div class="price-card"><h3>До 10 человек</h3><p>5 000 ₽</p></div>
+                <div class="price-card"><h3>10–20 человек</h3><p>9 000 ₽</p></div>
+                <div class="price-card"><h3>20–50 человек</h3><p>20 000 ₽</p></div>
+                <div class="price-card"><h3>50+ человек</h3><p>Цена договорная</p></div>
+            </div>
+            <button class="order-btn">Заказать</button>
+        </div>
+
+        <!-- 2. Барный кейтеринг -->
+        <div class="service-detail" id="bar">
+            <h2>Барный кейтеринг</h2>
+            <p>Мобильный бар с коктейлями, шоу флейринга и профессиональными барменами — сделает любое мероприятие ярким.</p>
+            <ul class="service-benefits">
+                <li>Опытные бармены</li>
+                <li>Шоу-программы и флейринг</li>
+                <li>Авторские коктейли</li>
+            </ul>
+            <div class="pricing">
+                <div class="price-card"><h3>До 10 человек</h3><p>7 000 ₽</p></div>
+                <div class="price-card"><h3>10–20 человек</h3><p>12 000 ₽</p></div>
+                <div class="price-card"><h3>20–50 человек</h3><p>25 000 ₽</p></div>
+                <div class="price-card"><h3>50+ человек</h3><p>Цена договорная</p></div>
+            </div>
+            <button class="order-btn">Заказать</button>
+        </div>
+
+        <!-- 3. Фуршет -->
+        <div class="service-detail" id="buffet">
+            <h2>Фуршет</h2>
+            <p>Разнообразные закуски, канапе, десерты и напитки — идеально для деловых встреч, вечеринок и праздников.</p>
+            <ul class="service-benefits">
+                <li>Широкий выбор блюд</li>
+                <li>Красивая подача</li>
+                <li>Возможность персонального меню</li>
+            </ul>
+            <div class="pricing">
+                <div class="price-card"><h3>До 10 человек</h3><p>10 000 ₽</p></div>
+                <div class="price-card"><h3>10–20 человек</h3><p>18 000 ₽</p></div>
+                <div class="price-card"><h3>20–50 человек</h3><p>35 000 ₽</p></div>
+                <div class="price-card"><h3>50+ человек</h3><p>Цена договорная</p></div>
+            </div>
+            <button class="order-btn">Заказать</button>
+        </div>
+
+        <!-- 4. Оформление и декор -->
+        <div class="service-detail" id="decor">
+            <h2>Оформление и декор</h2>
+            <p>Создадим атмосферу праздника с помощью стильного оформления, фотозон, световых решений и декораций.</p>
+            <ul class="service-benefits">
+                <li>Индивидуальный дизайн</li>
+                <li>Фотозоны и декорации</li>
+                <li>Световое оформление</li>
+            </ul>
+            <div class="pricing">
+                <div class="price-card"><h3>До 10 человек</h3><p>8 000 ₽</p></div>
+                <div class="price-card"><h3>10–20 человек</h3><p>15 000 ₽</p></div>
+                <div class="price-card"><h3>20–50 человек</h3><p>30 000 ₽</p></div>
+                <div class="price-card"><h3>50+ человек</h3><p>Цена договорная</p></div>
+            </div>
+            <button class="order-btn">Заказать</button>
+        </div>
+
+        <!-- 5. Музыкальное сопровождение -->
+        <div class="service-detail" id="music">
+            <h2>Музыкальное сопровождение</h2>
+            <p>Живые выступления, диджеи или фоновая музыка — создадим правильное настроение для вашего события.</p>
+            <ul class="service-benefits">
+                <li>Живые исполнители и диджеи</li>
+                <li>Профессиональное оборудование</li>
+                <li>Музыка под любой формат</li>
+            </ul>
+            <div class="pricing">
+                <div class="price-card"><h3>До 10 человек</h3><p>6 000 ₽</p></div>
+                <div class="price-card"><h3>10–20 человек</h3><p>11 000 ₽</p></div>
+                <div class="price-card"><h3>20–50 человек</h3><p>22 000 ₽</p></div>
+                <div class="price-card"><h3>50+ человек</h3><p>Цена договорная</p></div>
+            </div>
+            <button class="order-btn">Заказать</button>
+        </div>
+
+    </section>
+
+        <!-- Модальное окно для заказа -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма заказа услуги</h2>
+            <form id="orderForm">
+                <label for="service">Услуга:</label>
+                <input type="text" id="service" name="service" readonly>
+
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" name="comment"></textarea>
+
+                <button type="submit" class="submit-btn">Отправить заказ</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
